@@ -68,7 +68,7 @@ jobs:
           ./gradlew  ${{ inputs.publish-tasks }} \
             -PNATIVE_BUILD_TYPE=${{ inputs.build-debug && 'DEBUG' || 'RELEASE' }} \
             -PGITHUB_ARTIFACT_RELEASE_ID=${{ steps.devrelease.outputs.id }} \
-            -PGITHUB_PUBLISH_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            -PGITHUB_PUBLISH_TOKEN=${{ secrets.PUBLISH_TOKEN }} \
             -PGITHUB_REPO=${{ github.repository }} \
             -PENABLE_PUBLISHING=true \
             --no-daemon --info --stacktrace
